@@ -1,4 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
+import Box from "@mui/material/Box";
+import { green, orange } from "@mui/material/colors";
+import { loadCSS } from "fg-loadcss";
+import AddCircleIcon from "@mui/icons-material/AddCircle";
+import Icon from "@mui/material/Icon";
 
 function TodoForm(props) {
   const [input, setInput] = useState(props.edit ? props.edit.value : "");
@@ -40,7 +45,7 @@ function TodoForm(props) {
           </button>
         </>
       ) : (
-        <>
+        <div className="todo-div">
           <input
             placeholder="Add a todo"
             value={input}
@@ -50,9 +55,9 @@ function TodoForm(props) {
             ref={inputRef}
           />
           <button onClick={handleSubmit} className="todo-button">
-            Add todo
+            <AddCircleIcon style={{ fontSize: "40px", color: "white" }} />
           </button>
-        </>
+        </div>
       )}
     </form>
   );
