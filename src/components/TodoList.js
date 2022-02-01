@@ -5,6 +5,7 @@ import Todo from "./Todo";
 function TodoList() {
   const [todos, setTodos] = useState([]);
 
+  // Takes care that the user actually adds something, or doesn't add too much space between two words
   const addTodo = (todo) => {
     if (!todo.text || /^\s*$/.test(todo.text)) {
       return;
